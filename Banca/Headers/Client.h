@@ -10,10 +10,10 @@ class Client
 {
 public:
 	Client() = default;
-	Client(int newId);
-	Client(std::string newName);
-	Client(std::vector<Cont> newConturi);
-	Client(std::vector<Credit> newCredite);
+	explicit Client(int newId);
+	explicit Client(std::string newName);
+	explicit Client(std::vector<Cont> newConturi);
+	explicit Client(std::vector<Credit> newCredite);
 	Client(std::vector<Cont> newConturi, std::vector<Credit> newCredite);
 	Client(const Client& other);
 	~Client();
@@ -49,7 +49,7 @@ public:
 	void SetId(int newId) { id = newId; }
 
 	std::string GetName() { return name; }
-	void SetName(std::string newName) { name = newName; }
+	void SetName(const std::string& newName) { name = newName; }
 
 	size_t GetNrConturi() { return nrConturi; }
 	size_t GetNrCredite() { return nrCredite; }

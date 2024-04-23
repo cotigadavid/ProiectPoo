@@ -9,7 +9,7 @@ class Banca
 {
 public:
 	Banca() = default;
-	Banca(std::vector<Client> newClienti);
+	explicit Banca(std::vector<Client> newClienti);
 	~Banca();
 
 	Banca& operator=(const Banca& other) {

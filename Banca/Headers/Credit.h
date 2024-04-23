@@ -6,7 +6,7 @@ class Credit
 {
 public:
 	Credit() = default;
-	Credit(int newSold);
+	explicit Credit(int newSold);
 	Credit(int newId, int newSold);
 	Credit(const Credit& other);
 	~Credit();

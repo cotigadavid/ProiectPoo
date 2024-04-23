@@ -19,7 +19,7 @@ void UI::RemoveClient()
 {
 }
 
-void UI::CheckClient()
+void UI::AskForID()
 {
 	std::cout << "Please provide the ID of the client\n";
 }

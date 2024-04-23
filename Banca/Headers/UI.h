@@ -8,7 +8,7 @@ public:
 	static void SelectAction();
 	static void AddClient();
 	static void RemoveClient();
-	static void CheckClient();
+	static void AskForID();
 
 	static int GetInput();
 };
