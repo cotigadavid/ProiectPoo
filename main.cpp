@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "Database.h"
-#include "UI.h"
-#include "Banca.h"
+#include "Banca/Headers/Database.h"
+#include "Banca/Headers/UI.h"
+#include "Banca/Headers/Banca.h"
 
 int main()
 {
