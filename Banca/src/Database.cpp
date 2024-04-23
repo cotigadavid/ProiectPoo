@@ -32,7 +32,7 @@ void Database::ReadFromFile(Banca& banca)
 {
 	std::ifstream fin("Date.txt");
 
-	int nrClienti;
+	int nrClienti = 0;
 
 	fin >> nrClienti;
 
