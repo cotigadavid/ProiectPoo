@@ -32,7 +32,7 @@ public:
 	std::vector<Client> GetClienti() { return clienti; }
 
 	void AddClient(Client& newClient);
-	//void EraseClient(int index);
+	void EraseClient(int index);
 
 	bool HasId(int id);
 

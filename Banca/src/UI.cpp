@@ -11,14 +11,6 @@ void UI::SelectAction()
 	std::cout << "2 - Check Client\n\n";
 }
 
-void UI::AddClient()
-{
-}
-
-void UI::RemoveClient()
-{
-}
-
 void UI::AskForID()
 {
 	std::cout << "Please provide the ID of the client\n";

@@ -20,10 +20,10 @@ void Banca::AddClient(Client& newClient)
 	nrClienti++;
 }
 
-//void Banca::EraseClient(int index)
-//{
-//	clienti.erase(clienti.begin() + index);
-//}
+void Banca::EraseClient(int index)
+{
+	clienti.erase(clienti.begin() + index);
+}
 
 bool Banca::HasId(int id)
 {
