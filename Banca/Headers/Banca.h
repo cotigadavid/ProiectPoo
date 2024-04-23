@@ -9,7 +9,7 @@ class Banca
 {
 public:
 	Banca() = default;
-	explicit Banca(std::vector<Client> newClienti);
+	explicit Banca(const std::vector<Client>& newClienti);
 	~Banca();
 
 	Banca& operator=(const Banca& other) {
@@ -32,7 +32,7 @@ public:
 	std::vector<Client> GetClienti() { return clienti; }
 
 	void AddClient(Client& newClient);
-	void EraseClient(int index);
+	//void EraseClient(int index);
 
 	bool HasId(int id);
 

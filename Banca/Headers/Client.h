@@ -11,10 +11,10 @@ class Client
 public:
 	Client() = default;
 	explicit Client(int newId);
-	explicit Client(std::string newName);
-	explicit Client(std::vector<Cont> newConturi);
-	explicit Client(std::vector<Credit> newCredite);
-	Client(std::vector<Cont> newConturi, std::vector<Credit> newCredite);
+	explicit Client(const std::string& newName);
+	explicit Client(const std::vector<Cont>& newConturi);
+	explicit Client(const std::vector<Credit>& newCredite);
+	Client(const std::vector<Cont>& newConturi, const std::vector<Credit>& newCredite);
 	Client(const Client& other);
 	~Client();
 
@@ -40,10 +40,10 @@ private:
 
 public:
 	void AddCont(Cont& newCont);
-	void EraseCont(int index);
+	//void EraseCont(int index);
 
 	void AddCredit(Credit& newCredit);
-	void EraseCredit(int index);
+	//void EraseCredit(int index);
 
 	int GetId() { return id; }
 	void SetId(int newId) { id = newId; }

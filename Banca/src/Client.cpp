@@ -5,24 +5,24 @@ Client::Client(int newId)
 {
 }
 
-Client::Client(std::string newName)
+Client::Client(const std::string& newName)
 	: name(newName)
 {
 }
 
-Client::Client(std::vector<Cont> newConturi)
+Client::Client(const std::vector<Cont>& newConturi)
 	: conturi(newConturi)
 {
 	nrConturi = newConturi.size();
 }
 
-Client::Client(std::vector<Credit> newCredite)
+Client::Client(const std::vector<Credit>& newCredite)
 	: credite(newCredite)
 {
 	nrCredite = newCredite.size();
 }
 
-Client::Client(std::vector<Cont> newConturi, std::vector<Credit> newCredite)
+Client::Client(const std::vector<Cont>& newConturi, const std::vector<Credit>& newCredite)
 	: conturi(newConturi), credite(newCredite)
 {
 	nrConturi = newConturi.size();
@@ -47,10 +47,10 @@ void Client::AddCont(Cont& newCont)
 	nrConturi++;
 }
 
-void Client::EraseCont(int index)
-{
-	conturi.erase(conturi.begin() + index);
-}
+//void Client::EraseCont(int index)
+//{
+//	conturi.erase(conturi.begin() + index);
+//}
 
 void Client::AddCredit(Credit& newCredit)
 {
@@ -61,7 +61,7 @@ void Client::AddCredit(Credit& newCredit)
 	nrCredite++;
 }
 
-void Client::EraseCredit(int index)
-{
-	credite.erase(credite.begin() + index);
-}
+//void Client::EraseCredit(int index)
+//{
+//	credite.erase(credite.begin() + index);
+//}

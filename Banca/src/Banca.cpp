@@ -1,7 +1,7 @@
 #include "../Headers/Banca.h"
 
 
-Banca::Banca(std::vector<Client> newClienti)
+Banca::Banca(const std::vector<Client>& newClienti)
 	: clienti(newClienti)
 {
 	nrClienti = newClienti.size();
@@ -20,10 +20,10 @@ void Banca::AddClient(Client& newClient)
 	nrClienti++;
 }
 
-void Banca::EraseClient(int index)
-{
-	clienti.erase(clienti.begin() + index);
-}
+//void Banca::EraseClient(int index)
+//{
+//	clienti.erase(clienti.begin() + index);
+//}
 
 bool Banca::HasId(int id)
 {
