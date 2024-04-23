@@ -113,8 +113,18 @@ endfunction()
 
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${PROJECT_NAME} main.cpp
-	Banca/Headers/Banca.h	
+	Banca/Headers/Banca.h
+	Banca/src/Client.h
+	Banca/src/Cont.h
+	Banca/src/Credit.h
+	Banca/src/Database.h
+	Banca/src/UI.h	
 	Banca/src/Banca.cpp
+	Banca/src/Client.cpp
+	Banca/src/Cont.cpp
+	Banca/src/Credit.cpp
+	Banca/src/Database.cpp
+	Banca/src/UI.cpp
 )
 
 ###############################################################################

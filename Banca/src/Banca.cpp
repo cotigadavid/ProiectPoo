@@ -38,5 +38,6 @@ Client Banca::GetClientWithID(int id)
 	for (auto client : clienti)
 		if (client.GetId() == id)
 			return client;
-	return NULL;
+	Client temp(-1);
+	return temp;
 }

@@ -1,8 +1,8 @@
 #include <fstream>
 
-#include "Database.h"
-#include "Banca.h"
-#include "Client.h"
+#include "../Headers/Database.h"
+#include "../Headers/Banca.h"
+#include "../Headers/Client.h"
 
 void Database::CopyToFile(Banca& banca)
 {

@@ -1,4 +1,4 @@
-#include "Cont.h"
+#include "../Headers/Cont.h"
 
 Cont::Cont(int newSold)
 {

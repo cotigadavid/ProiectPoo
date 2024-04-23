@@ -1,4 +1,4 @@
-#include "Credit.h"
+#include "../Headers/Credit.h"
 
 Credit::Credit(int newSold)
 	: sold(newSold)
