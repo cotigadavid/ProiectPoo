@@ -1,6 +1,7 @@
 #include "../Headers/Cont.h"
 
 Cont::Cont(int newSold)
+	: sold(newSold)
 {
 }
 

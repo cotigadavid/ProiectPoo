@@ -66,10 +66,10 @@ int main()
 	{
 		UI::AskForID();
 		input = UI::GetInput();
-		int input2;
 
 		if (banca.HasId(input))
 		{
+			int input2;
 			UI::SelectClientAction();
 			input = UI::GetInput();
 
