@@ -40,10 +40,10 @@ private:
 
 public:
 	void AddCont(Cont& newCont);
-	//void EraseCont(int index);
+	void EraseCont(int index);
 
 	void AddCredit(Credit& newCredit);
-	//void EraseCredit(int index);
+	void EraseCredit(int index);
 
 	int GetId() { return id; }
 	void SetId(int newId) { id = newId; }

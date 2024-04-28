@@ -7,6 +7,7 @@ public:
 
 	static void SelectAction();
 	static void AskForID();
+	static void SelectClientAction();
 
 	static int GetInput();
 };

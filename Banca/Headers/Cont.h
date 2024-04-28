@@ -34,5 +34,4 @@ public:
 	void SubtractFromSold(int amount) { sold -= amount; }
 
 	int GetId() { return id; }
-	void SetId(int newId) { id = newId; }
 };

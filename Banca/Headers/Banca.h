@@ -10,13 +10,6 @@ class Banca
 public:
 	Banca() = default;
 	explicit Banca(const std::vector<Client>& newClienti);
-	~Banca();
-
-	Banca& operator=(const Banca& other) {
-		nrClienti = other.nrClienti;
-		clienti = other.clienti;
-		return *this;
-	}
 
 	friend std::ostream& operator<<(std::ostream& os, const Banca& banca) {
 		os << "Numar clienti : " << banca.nrClienti << "\n";

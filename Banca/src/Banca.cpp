@@ -7,10 +7,6 @@ Banca::Banca(const std::vector<Client>& newClienti)
 	nrClienti = newClienti.size();
 }
 
-Banca::~Banca()
-{
-}
-
 void Banca::AddClient(Client& newClient)
 {
 	clienti.push_back(newClient);

@@ -255,7 +255,7 @@ jobs:
         uses: ./.github/actions/configure-cmake
         with:
           custom_flags: ${{ matrix.cmake_flags }}
-          warnings_as_errors: 'OFF'
+          warnings_as_errors: 'ON'
 
       - name: Build
         # Execute the build using N jobs (-jN)

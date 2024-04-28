@@ -41,16 +41,14 @@ Client::~Client()
 void Client::AddCont(Cont& newCont)
 {
 	conturi.push_back(newCont);
-
-	newCont.SetId((int)nrConturi);
 	
 	nrConturi++;
 }
 
-//void Client::EraseCont(int index)
-//{
-//	conturi.erase(conturi.begin() + index);
-//}
+void Client::EraseCont(int index)
+{
+	conturi.erase(conturi.begin() + index);
+}
 
 void Client::AddCredit(Credit& newCredit)
 {
@@ -61,7 +59,7 @@ void Client::AddCredit(Credit& newCredit)
 	nrCredite++;
 }
 
-//void Client::EraseCredit(int index)
-//{
-//	credite.erase(credite.begin() + index);
-//}
+void Client::EraseCredit(int index)
+{
+	credite.erase(credite.begin() + index);
+}
