@@ -30,7 +30,7 @@ Client::Client(const std::vector<Cont>& newConturi, const std::vector<Credit>& n
 }
 
 Client::Client(const Client& other)
-	: id(other.id), conturi(other.conturi), nrConturi(other.nrConturi), name(other.name)
+	: id(other.id), nrConturi(other.nrConturi), name(other.name), conturi(other.conturi)
 {
 }
 
