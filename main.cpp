@@ -72,10 +72,10 @@ int main()
 		{
 			UI::AskForID();
 			int id = UI::GetInput();
-			int input2;
 
 			if (banca.HasId(id))
 			{
+				int input2;
 				bool b_back = false;
 				while (!b_back)
 				{
