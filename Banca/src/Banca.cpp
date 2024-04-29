@@ -38,6 +38,6 @@ Client* Banca::GetClientWithID(int id)
 	for (size_t i = 0; i < clienti.size(); ++i)
 		if (clienti[i].GetId() == id)
 			return &clienti[i];
-	Client temp(-1);
-	return &temp;
+	
+	return NULL;
 }

@@ -32,11 +32,6 @@ void UI::SelectClientAction()
 	std::cout << "-1 - Back\n\n";
 }
 
-void UI::AskExit()
-{
-	std::cout << "Enter -1 to  exit\n\n";
-}
-
 int UI::GetInput()
 {
 	int a;
