@@ -45,18 +45,18 @@ void Client::AddCont(Cont& newCont)
 	nrConturi++;
 }
 
-bool Client::HasContWithId(int id)
+bool Client::HasContWithId(int ID)
 {
 	for (auto cont : conturi)
-		if (cont.GetId() == id)
+		if (cont.GetId() == ID)
 			return true;
 	return false;
 }
 
-bool Client::HasCreditWithId(int id)
+bool Client::HasCreditWithId(int ID)
 {
 	for (auto credit : credite)
-		if (credit.GetId() == id)
+		if (credit.GetId() == ID)
 			return true;
 	return false;
 }
