@@ -45,21 +45,57 @@ void Client::AddCont(Cont& newCont)
 	nrConturi++;
 }
 
+bool Client::HasContWithId(int id)
+{
+	for (auto cont : conturi)
+		if (cont.GetId() == id)
+			return true;
+	return false;
+}
+
+bool Client::HasCreditWithId(int id)
+{
+	for (auto credit : credite)
+		if (credit.GetId() == id)
+			return true;
+	return false;
+}
+
+//void Client::EraseCont(int index)
+//{
+//	std::vector<Cont>* conturi = GetConturi();
+//	for (size_t i = 0; i < GetNrConturi(); ++i)
+//		if ((*conturi)[i].GetId() == index)
+//			(*conturi).erase((*conturi).begin() + i);
+//}
+
 void Client::EraseCont(int index)
 {
-	conturi.erase(conturi.begin() + index);
+	for (size_t i = 0; i < GetNrConturi(); ++i)
+		if (conturi[i].GetId() == index)
+			conturi.erase(conturi.begin() + i);
+	nrConturi--;
 }
 
 void Client::AddCredit(Credit& newCredit)
 {
 	credite.push_back(newCredit);
 
-	newCredit.SetId((int)nrCredite);
-
 	nrCredite++;
 }
 
+//void Client::EraseCredit(int index)
+//{
+//	std::vector<Credit>* credite = GetCredite();
+//	for (size_t i = 0; i < GetNrCredite(); ++i)
+//		if ((*credite)[i].GetId() == index)
+//			(*credite).erase((*credite).begin() + i);
+//}
+
 void Client::EraseCredit(int index)
 {
-	credite.erase(credite.begin() + index);
+	for (size_t i = 0; i < GetNrCredite(); ++i)
+		if (credite[i].GetId() == index)
+			credite.erase(credite.begin() + i);
+	nrCredite--;
 }

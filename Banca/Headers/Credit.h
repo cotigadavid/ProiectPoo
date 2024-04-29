@@ -6,7 +6,7 @@ class Credit
 {
 public:
 	Credit() = default;
-	explicit Credit(int newSold);
+	explicit Credit(int newID);
 	Credit(int newId, int newSold);
 	Credit(const Credit& other);
 	~Credit();
@@ -34,5 +34,4 @@ public:
 	void SubtractFromSold(int amount) { sold -= amount; }
 
 	int GetId() { return id; }
-	void SetId(int newId) { id = newId; }
 };

@@ -6,7 +6,7 @@ class Cont
 {
 public:
 	Cont() = default;
-	explicit Cont(int newSold);
+	explicit Cont(int newID);
 	Cont(int newId, int newSold);
 	Cont(const Cont& other);
 	~Cont();

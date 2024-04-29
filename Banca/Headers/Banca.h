@@ -29,5 +29,5 @@ public:
 
 	bool HasId(int id);
 
-	Client GetClientWithID(int id);
+	Client* GetClientWithID(int id);
 };

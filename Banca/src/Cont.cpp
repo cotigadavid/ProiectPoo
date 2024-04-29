@@ -1,7 +1,7 @@
 #include "../Headers/Cont.h"
 
-Cont::Cont(int newSold)
-	: sold(newSold)
+Cont::Cont(int newID)
+	: id(newID)
 {
 }
 

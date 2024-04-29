@@ -14,7 +14,7 @@ void Database::CopyToFile(Banca& banca)
 
 	for (size_t i = 0; i < clienti.size(); ++i)
 	{
-		fout << clienti[i].GetId() << " " << clienti[i].GetName() << " " << clienti[i].GetNrConturi() << " " << clienti[i].GetNrCredite() << " ";
+		fout << clienti[i].GetId() << " " << clienti[i].GetNrConturi() << " " << clienti[i].GetNrCredite() << " ";
 
 		std::vector<Cont> conturi = clienti[i].GetConturi();
 		std::vector<Credit> credite = clienti[i].GetCredite();
@@ -37,17 +37,15 @@ void Database::ReadFromFile(Banca& banca)
 	fin >> nrClienti;
 
 	int id;
-	std::string name;
 	int nrConturi;
 	int nrCredite;
 
 	for (int i = 0; i < nrClienti; ++i)
 	{
-		fin >> id >> name >> nrConturi >> nrCredite;
+		fin >> id >> nrConturi >> nrCredite;
 
 		Client clientTemp;
 		clientTemp.SetId(id);
-		clientTemp.SetName(name);
 		
 		int contId, sold;
 		for (int j = 0; j < nrConturi; j++)

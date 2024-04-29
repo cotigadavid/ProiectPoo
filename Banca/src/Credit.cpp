@@ -1,7 +1,7 @@
 #include "../Headers/Credit.h"
 
-Credit::Credit(int newSold)
-	: sold(newSold)
+Credit::Credit(int newID)
+	: id(newID)
 {
 }
 

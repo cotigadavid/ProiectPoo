@@ -2,14 +2,19 @@
 
 #include <iostream>
 
+void UI::WelcomeMessage()
+{
+	std::cout << "WELCOME TO THE DIGITAL BANKING SYSTEM\n\n";
+}
+
 void UI::SelectAction()
 {
-	std::cout << "WELCOME TO THE DIGITAL BANKING SYSTEM\n";
 	std::cout << "Please Select the desired action\n";
 	std::cout << "0 - Add Client\n";
 	std::cout << "1 - Remove Client\n";
 	std::cout << "2 - Check Client\n";
-	std::cout << "3 - Further Action on Client \n\n";
+	std::cout << "3 - Further Action on Client \n";
+	std::cout << "-1 - Exit \n\n";
 }
 
 void UI::AskForID()
@@ -23,7 +28,13 @@ void UI::SelectClientAction()
 	std::cout << "0 - Add Account\n";
 	std::cout << "1 - Remove Account\n";
 	std::cout << "2 - Add Credit\n";
-	std::cout << "3 - Remove Credit\n\n";
+	std::cout << "3 - Remove Credit\n";
+	std::cout << "-1 - Back\n\n";
+}
+
+void UI::AskExit()
+{
+	std::cout << "Enter -1 to  exit\n\n";
 }
 
 int UI::GetInput()

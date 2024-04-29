@@ -11,14 +11,18 @@ void Banca::AddClient(Client& newClient)
 {
 	clienti.push_back(newClient);
 
-	//newClient.SetId(nrClienti);
-
 	nrClienti++;
 }
 
 void Banca::EraseClient(int index)
 {
-	clienti.erase(clienti.begin() + index);
+	for (size_t i = 0; i < GetNrClienti(); ++i)
+		if (clienti[i].GetId() == index)
+		{
+			clienti.erase(clienti.begin() + i);
+			break;
+		}
+	nrClienti--;
 }
 
 bool Banca::HasId(int id)
@@ -29,11 +33,11 @@ bool Banca::HasId(int id)
 	return false;
 }
 
-Client Banca::GetClientWithID(int id)
+Client* Banca::GetClientWithID(int id)
 {
-	for (auto client : clienti)
-		if (client.GetId() == id)
-			return client;
+	for (size_t i = 0; i < clienti.size(); ++i)
+		if (clienti[i].GetId() == id)
+			return &clienti[i];
 	Client temp(-1);
-	return temp;
+	return &temp;
 }

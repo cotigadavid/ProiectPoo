@@ -39,6 +39,9 @@ private:
 	std::vector<Credit> credite;
 
 public:
+	bool HasContWithId(int id);
+	bool HasCreditWithId(int id);
+
 	void AddCont(Cont& newCont);
 	void EraseCont(int index);
 
