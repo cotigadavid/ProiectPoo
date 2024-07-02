@@ -6,8 +6,6 @@
 
 int main()
 {
-	Banca* banca = new Banca;
-
 	try {
 		ClientUI::Run();
 	}

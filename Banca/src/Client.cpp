@@ -84,19 +84,19 @@ void Client::EraseLoan(int index)
 	nrLoans--;
 }
 
-Cont* Client::GetContWithID(int id)
+Cont* Client::GetContWithID(int ID)
 {
 	for (size_t i = 0; i < conturi.size(); ++i)
-		if (conturi[i].GetId() == id)
+		if (conturi[i].GetId() == ID)
 			return &conturi[i];
 
 	return nullptr;
 }
 
-Loan* Client::GetLoanWithID(int id)
+Loan* Client::GetLoanWithID(int ID)
 {
 	for (size_t i = 0; i < loans.size(); ++i)
-		if (loans[i].GetId() == id)
+		if (loans[i].GetId() == ID)
 			return &loans[i];
 
 	return nullptr;
