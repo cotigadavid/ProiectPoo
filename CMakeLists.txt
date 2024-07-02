@@ -115,15 +115,27 @@ endfunction()
 add_executable(${PROJECT_NAME} main.cpp
 	Banca/Headers/Banca.h
 	Banca/Headers/Client.h
+	Banca/Headers/ClientUI.h
 	Banca/Headers/Cont.h
-	Banca/Headers/Credit.h
 	Banca/Headers/Database.h
+	Banca/Headers/Depunere.h
+	Banca/Headers/Exceptii.h
+	Banca/Headers/Loan.h
+	Banca/Headers/Retragere.h
+	Banca/Headers/Transfer.h
+	Banca/Headers/Tranzactii.h
 	Banca/Headers/UI.h	
 	Banca/src/Banca.cpp
 	Banca/src/Client.cpp
+	Banca/src/ClientUI.cpp
 	Banca/src/Cont.cpp
-	Banca/src/Credit.cpp
 	Banca/src/Database.cpp
+	Banca/src/Depunere.cpp
+	Banca/src/Exceptii.cpp
+	Banca/src/Loan.cpp
+	Banca/src/Retragere.cpp
+	Banca/src/Transfer.cpp
+	Banca/src/Tranzactii.cpp
 	Banca/src/UI.cpp
 )
 
