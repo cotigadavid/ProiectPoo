@@ -123,7 +123,7 @@ add_executable(${PROJECT_NAME} main.cpp
 	Banca/Headers/Loan.h
 	Banca/Headers/Retragere.h
 	Banca/Headers/Transfer.h
-	Banca/Headers/Tranzactii.h
+	Banca/Headers/Tranzactie.h
 	Banca/Headers/UI.h	
 	Banca/src/Banca.cpp
 	Banca/src/Client.cpp
@@ -135,7 +135,7 @@ add_executable(${PROJECT_NAME} main.cpp
 	Banca/src/Loan.cpp
 	Banca/src/Retragere.cpp
 	Banca/src/Transfer.cpp
-	Banca/src/Tranzactii.cpp
+	Banca/src/Tranzactie.cpp
 	Banca/src/UI.cpp
 )
 
