@@ -1,6 +1,7 @@
 #include "../Headers/ClientUI.h"
 
 #include <iostream>
+#include <memory>
 
 #include "../Headers/Retragere.h"
 #include "../Headers/Depunere.h"
