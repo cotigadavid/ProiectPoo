@@ -131,7 +131,6 @@ add_executable(${PROJECT_NAME} main.cpp
 	Banca/src/Cont.cpp
 	Banca/src/Database.cpp
 	Banca/src/Depunere.cpp
-	Banca/src/Exceptii.cpp
 	Banca/src/Loan.cpp
 	Banca/src/Retragere.cpp
 	Banca/src/Transfer.cpp
