@@ -10,6 +10,8 @@ public:
 	void Run() override;
 	void ConfirmareRetragere();
 
+	~Retragere();
+
 private:
 	int clientContId;
 };

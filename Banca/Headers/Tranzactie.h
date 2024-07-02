@@ -12,6 +12,8 @@ public:
 	void SetClientId(int newId) { clientId = newId; }
 	int GetSuma() { return suma; }
 
+	virtual ~Tranzactie();
+
 protected:
 	int tranId = -1;
 	int clientId = -1;

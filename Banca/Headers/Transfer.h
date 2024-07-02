@@ -16,6 +16,8 @@ public:
 
 	int GetReceiverId() { return receiverId; }
 
+	~Transfer();
+
 private:
 	int receiverId;
 	int receiverContId;

@@ -39,3 +39,7 @@ void Retragere::ConfirmareRetragere()
 	std::cout << "Retragere confirmata\n";
 	//banca->AddTranzactie(this);
 }
+
+Retragere::~Retragere()
+{
+}

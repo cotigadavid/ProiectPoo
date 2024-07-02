@@ -36,3 +36,7 @@ void Depunere::ConfirmareDepunere()
 	std::cout << "Depunere confirmate\n";
 	//banca->AddTranzactie(this);
 }
+
+Depunere::~Depunere()
+{
+}

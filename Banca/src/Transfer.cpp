@@ -49,3 +49,7 @@ void Transfer::ConfirmareTransfer()
 	std::cout << "Transfer efectuat\n";
 	//banca->AddTranzactie(this);
 }
+
+Transfer::~Transfer()
+{
+}
