@@ -58,7 +58,7 @@ public:
 	size_t GetNrLoans() { return nrLoans; }
 
 	std::vector<Cont> GetConturi() { return conturi; }
-	std::vector<Loan> GetLoane() { return loans; }
+	std::vector<Loan> GetLoans() { return loans; }
 
 	Cont* GetContWithID(int id);
 	Loan* GetLoanWithID(int id);

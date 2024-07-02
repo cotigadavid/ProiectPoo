@@ -16,10 +16,10 @@ Client::Client(const std::vector<Cont>& newConturi)
 	nrConturi = newConturi.size();
 }
 
-Client::Client(const std::vector<Loan>& newLoane)
-	: loans(newLoane)
+Client::Client(const std::vector<Loan>& newLoans)
+	: loans(newLoans)
 {
-	nrLoans = newLoane.size();
+	nrLoans = newLoans.size();
 }
 
 Client::Client(const std::vector<Cont>& newConturi, const std::vector<Loan>& newLoans)
@@ -61,14 +61,6 @@ bool Client::HasLoanWithId(int ID)
 	return false;
 }
 
-//void Client::EraseCont(int index)
-//{
-//	std::vector<Cont>* conturi = GetConturi();
-//	for (size_t i = 0; i < GetNrConturi(); ++i)
-//		if ((*conturi)[i].GetId() == index)
-//			(*conturi).erase((*conturi).begin() + i);
-//}
-
 void Client::EraseCont(int index)
 {
 	for (size_t i = 0; i < GetNrConturi(); ++i)
@@ -83,14 +75,6 @@ void Client::AddLoan(Loan& newLoan)
 
 	nrLoans++;
 }
-
-//void Client::EraseLoan(int index)
-//{
-//	std::vector<Loan>* Loane = GetLoane();
-//	for (size_t i = 0; i < GetNrLoane(); ++i)
-//		if ((*Loane)[i].GetId() == index)
-//			(*Loane).erase((*Loane).begin() + i);
-//}
 
 void Client::EraseLoan(int index)
 {

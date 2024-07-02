@@ -25,12 +25,12 @@ void Database::WriteAccountsInfo(Banca* banca)
 		fout << clienti[i].GetId() << " " << clienti[i].GetNrConturi() << " " << clienti[i].GetNrLoans() << " ";
 
 		std::vector<Cont> conturi = clienti[i].GetConturi();
-		std::vector<Loan> Loane = clienti[i].GetLoane();
+		std::vector<Loan> Loans = clienti[i].GetLoans();
 		for (size_t j = 0; j < clienti[i].GetNrConturi(); ++j)
 			fout << conturi[j].GetId() << " " << conturi[j].GetSold() << " ";
 
 		for (size_t j = 0; j < clienti[i].GetNrLoans(); ++j)
-			fout << Loane[j].GetId() << " " << Loane[j].GetSold() << " ";
+			fout << Loans[j].GetId() << " " << Loans[j].GetSold() << " ";
 	}
 
 	fout.close();
