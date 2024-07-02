@@ -16,17 +16,17 @@ Client::Client(const std::vector<Cont>& newConturi)
 	nrConturi = newConturi.size();
 }
 
-Client::Client(const std::vector<Credit>& newCredite)
-	: credite(newCredite)
+Client::Client(const std::vector<Loan>& newLoane)
+	: loans(newLoane)
 {
-	nrCredite = newCredite.size();
+	nrLoans = newLoane.size();
 }
 
-Client::Client(const std::vector<Cont>& newConturi, const std::vector<Credit>& newCredite)
-	: conturi(newConturi), credite(newCredite)
+Client::Client(const std::vector<Cont>& newConturi, const std::vector<Loan>& newLoans)
+	: conturi(newConturi), loans(newLoans)
 {
 	nrConturi = newConturi.size();
-	nrCredite = newCredite.size();
+	nrLoans = newLoans.size();
 }
 
 Client::Client(const Client& other)
@@ -53,10 +53,10 @@ bool Client::HasContWithId(int ID)
 	return false;
 }
 
-bool Client::HasCreditWithId(int ID)
+bool Client::HasLoanWithId(int ID)
 {
-	for (auto credit : credite)
-		if (credit.GetId() == ID)
+	for (auto Loan : loans)
+		if (Loan.GetId() == ID)
 			return true;
 	return false;
 }
@@ -77,25 +77,43 @@ void Client::EraseCont(int index)
 	nrConturi--;
 }
 
-void Client::AddCredit(Credit& newCredit)
+void Client::AddLoan(Loan& newLoan)
 {
-	credite.push_back(newCredit);
+	loans.push_back(newLoan);
 
-	nrCredite++;
+	nrLoans++;
 }
 
-//void Client::EraseCredit(int index)
+//void Client::EraseLoan(int index)
 //{
-//	std::vector<Credit>* credite = GetCredite();
-//	for (size_t i = 0; i < GetNrCredite(); ++i)
-//		if ((*credite)[i].GetId() == index)
-//			(*credite).erase((*credite).begin() + i);
+//	std::vector<Loan>* Loane = GetLoane();
+//	for (size_t i = 0; i < GetNrLoane(); ++i)
+//		if ((*Loane)[i].GetId() == index)
+//			(*Loane).erase((*Loane).begin() + i);
 //}
 
-void Client::EraseCredit(int index)
+void Client::EraseLoan(int index)
 {
-	for (size_t i = 0; i < GetNrCredite(); ++i)
-		if (credite[i].GetId() == index)
-			credite.erase(credite.begin() + i);
-	nrCredite--;
+	for (size_t i = 0; i < GetNrLoans(); ++i)
+		if (loans[i].GetId() == index)
+			loans.erase(loans.begin() + i);
+	nrLoans--;
+}
+
+Cont* Client::GetContWithID(int id)
+{
+	for (size_t i = 0; i < conturi.size(); ++i)
+		if (conturi[i].GetId() == id)
+			return &conturi[i];
+
+	return nullptr;
+}
+
+Loan* Client::GetLoanWithID(int id)
+{
+	for (size_t i = 0; i < loans.size(); ++i)
+		if (loans[i].GetId() == id)
+			return &loans[i];
+
+	return nullptr;
 }

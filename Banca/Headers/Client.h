@@ -4,7 +4,7 @@
 #include <vector>
 
 #include "Cont.h"
-#include "Credit.h"
+#include "Loan.h"
 
 class Client 
 {
@@ -13,8 +13,8 @@ public:
 	explicit Client(int newId);
 	explicit Client(const std::string& newName);
 	explicit Client(const std::vector<Cont>& newConturi);
-	explicit Client(const std::vector<Credit>& newCredite);
-	Client(const std::vector<Cont>& newConturi, const std::vector<Credit>& newCredite);
+	explicit Client(const std::vector<Loan>& newLoans);
+	Client(const std::vector<Cont>& newConturi, const std::vector<Loan>& newLoans);
 	Client(const Client& other);
 	~Client();
 
@@ -26,27 +26,27 @@ public:
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, const Client& client) {
-		os << "Id : " << client.id << " Numar conturi : " << client.nrConturi << " Numar credite : " << client.nrCredite << "\n";
+		os << "Id : " << client.id << " Numar conturi : " << client.nrConturi << " Numar Credite : " << client.nrLoans << "\n";
 		return os;
 	}
 
 private:
 	int id = -1;
 	size_t nrConturi = 0;
-	size_t nrCredite = 0;
+	size_t nrLoans = 0;
 	std::string name;
 	std::vector<Cont> conturi;
-	std::vector<Credit> credite;
+	std::vector<Loan> loans;
 
 public:
 	bool HasContWithId(int id);
-	bool HasCreditWithId(int id);
+	bool HasLoanWithId(int id);
 
 	void AddCont(Cont& newCont);
 	void EraseCont(int index);
 
-	void AddCredit(Credit& newCredit);
-	void EraseCredit(int index);
+	void AddLoan(Loan& newLoan);
+	void EraseLoan(int index);
 
 	int GetId() { return id; }
 	void SetId(int newId) { id = newId; }
@@ -55,8 +55,11 @@ public:
 	void SetName(const std::string& newName) { name = newName; }
 
 	size_t GetNrConturi() { return nrConturi; }
-	size_t GetNrCredite() { return nrCredite; }
+	size_t GetNrLoans() { return nrLoans; }
 
 	std::vector<Cont> GetConturi() { return conturi; }
-	std::vector<Credit> GetCredite() { return credite; }
+	std::vector<Loan> GetLoane() { return loans; }
+
+	Cont* GetContWithID(int id);
+	Loan* GetLoanWithID(int id);
 };

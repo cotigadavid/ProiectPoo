@@ -2,23 +2,23 @@
 
 #include <iostream>
 
-class Credit
+class Loan
 {
 public:
-	Credit() = default;
-	explicit Credit(int newID);
-	Credit(int newId, int newSold);
-	Credit(const Credit& other);
-	~Credit();
+	Loan() = default;
+	explicit Loan(int newID);
+	Loan(int newId, int newSold);
+	Loan(const Loan& other);
+	~Loan();
 
-	Credit& operator=(const Credit& other) {
+	Loan& operator=(const Loan& other) {
 		id = other.id;
 		sold = other.sold;
 		return *this;
 	}
 
-	friend std::ostream& operator<<(std::ostream& os, const Credit& credit) {
-		os << "Id : " << credit.id << " Sold : " << credit.sold << "\n";
+	friend std::ostream& operator<<(std::ostream& os, const Loan& Loan) {
+		os << "Id : " << Loan.id << " Sold : " << Loan.sold << "\n";
 		return os;
 	}
 

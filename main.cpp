@@ -60,7 +60,7 @@ int main()
 			{
 				Client* temp = banca.GetClientWithID(input);
 				if (temp->GetId() != -1)
-					std::cout << "Client Id: " << temp->GetId() << " Client Name: " << temp->GetName() << " Nr de conturi: " << temp->GetNrConturi() << " Nr de credite: " << temp->GetNrCredite() << "\n\n";
+					std::cout << "Client Id: " << temp->GetId() << " Client Name: " << temp->GetName() << " Nr de conturi: " << temp->GetNrConturi() << " Nr de Loane: " << temp->GetNrLoane() << "\n\n";
 			}
 			else
 			{
@@ -101,19 +101,19 @@ int main()
 					}
 					else if (input == 2)
 					{
-						std::cout << "Enter the credit id: \n";
+						std::cout << "Enter the Loan id: \n";
 						input2 = UI::GetInput();
-						Credit newCredit(input2);
-						banca.GetClientWithID(id)->AddCredit(newCredit);
+						Loan newLoan(input2);
+						banca.GetClientWithID(id)->AddLoan(newLoan);
 					}
 					else if (input == 3)
 					{
-						std::cout << "Enter the credit id\n";
+						std::cout << "Enter the Loan id\n";
 						input2 = UI::GetInput();
-						if (banca.GetClientWithID(id)->HasCreditWithId(input2))
-							banca.GetClientWithID(id)->EraseCredit(input2);
+						if (banca.GetClientWithID(id)->HasLoanWithId(input2))
+							banca.GetClientWithID(id)->EraseLoan(input2);
 						else
-							std::cout << "No credit with id: " << input2 << " found\n\n";
+							std::cout << "No Loan with id: " << input2 << " found\n\n";
 					}
 					else if (input == -1)
 						b_back = true;
