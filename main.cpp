@@ -1,8 +1,8 @@
 #include <iostream>
 
-#include "../Headers/ClientUI.h"
-#include "../Headers/Banca.h"
-#include "../Headers/Exceptii.h"
+#include "Banca/Headers/ClientUI.h"
+#include "Banca/Headers/Banca.h"
+#include "Banca/Headers/Exceptii.h"
 
 int main()
 {

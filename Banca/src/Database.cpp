@@ -86,7 +86,7 @@ void Database::WriteLoginInfo()
 
 	fout << accounts.size() << "\n";
 
-	for (int i = 0; i < accounts.size(); ++i)
+	for (size_t i = 0; i < accounts.size(); ++i)
 	{
 		fout << accounts[i].username << " " << accounts[i].password << " " << accounts[i].id << "\n";
 	}
