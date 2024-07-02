@@ -36,23 +36,21 @@ void Banca::ShowTranzactii()
 		{
 			std::cout << "Transfer de la " << tran->GetClientId() << " catre " << tran->GetReceiverId() << " in valoare de " << tran->GetSuma() << "\n";
 		}
-		else
-		{
-			Retragere* ret = dynamic_cast<Retragere*>(tranzactii[i].get());
 
-			if (ret != nullptr)
-			{
-				std::cout << "Retragere de catre " << ret->GetClientId() << " in valoare de " << ret->GetSuma() << "\n";
-			}
-			else
-			{
-				Depunere* dep = dynamic_cast<Depunere*>(tranzactii[i].get());
-				if (dep != nullptr)
-				{
-					std::cout << "Depunere de catre " << dep->GetClientId() << " in valoare de " << dep->GetSuma() << "\n";
-				}
-			}
+		Retragere* ret = dynamic_cast<Retragere*>(tranzactii[i].get());
+
+		if (ret != nullptr)
+		{
+			std::cout << "Retragere de catre " << ret->GetClientId() << " in valoare de " << ret->GetSuma() << "\n";
 		}
+
+		Depunere* dep = dynamic_cast<Depunere*>(tranzactii[i].get());
+		if (dep != nullptr)
+		{
+			std::cout << "Depunere de catre " << dep->GetClientId() << " in valoare de " << dep->GetSuma() << "\n";
+		}
+			
+		
 	}
 }
 
