@@ -22,7 +22,7 @@ public:
 	static void WriteTranzactions(Banca* banca);
 
 	static std::vector<LogInInfo> GetLogInInfo();
-	static int IdOfUser(std::string username);
+	static int IdOfUser(const std::string& username);
 	static void AddAccount(LogInInfo acc);
 
 private:

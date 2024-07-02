@@ -1,9 +1,9 @@
 #include "../Headers/Banca.h"
 
-#include "Tranzactie.h"
-#include "Transfer.h"
-#include "Depunere.h"
-#include "Retragere.h"
+#include "../Headers/Tranzactie.h"
+#include "../Headers/Transfer.h"
+#include "../Headers/Depunere.h"
+#include "../Headers/Retragere.h"
 
 Banca* Banca::s_Banca = nullptr;
 

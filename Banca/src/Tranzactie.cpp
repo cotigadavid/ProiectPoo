@@ -1,8 +1,8 @@
-#include "Tranzactie.h"
+#include "../Headers/Tranzactie.h"
 
 #include <iostream>
 
-#include "Banca.h"
+#include "../Headers/Banca.h"
 
 Tranzactie::Tranzactie()
 {

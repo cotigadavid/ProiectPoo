@@ -1,4 +1,4 @@
-#include "Depunere.h"
+#include "../Headers/Depunere.h"
 
 #include <iostream>
 

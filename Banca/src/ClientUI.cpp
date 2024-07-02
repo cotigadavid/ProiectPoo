@@ -1,12 +1,12 @@
-#include "ClientUI.h"
+#include "../Headers/ClientUI.h"
 
 #include <iostream>
 
-#include "Retragere.h"
-#include "Depunere.h"
-#include "Transfer.h"
-#include "Database.h"
-#include "UI.h"
+#include "../Headers/Retragere.h"
+#include "../Headers/Depunere.h"
+#include "../Headers/Transfer.h"
+#include "../Headers/Database.h"
+#include "../Headers/UI.h"
 
 int ClientUI::ClientID = -1;
 

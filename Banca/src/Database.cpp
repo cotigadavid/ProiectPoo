@@ -4,11 +4,11 @@
 #include "../Headers/Banca.h"
 #include "../Headers/Client.h"
 
-#include "Transfer.h"
-#include "Tranzactie.h"
-#include "Depunere.h"
-#include "Retragere.h"
-#include "Exceptii.h"
+#include "../Headers/Transfer.h"
+#include "../Headers/Tranzactie.h"
+#include "../Headers/Depunere.h"
+#include "../Headers/Retragere.h"
+#include "../Headers/Exceptii.h"
 
 std::vector<LogInInfo> Database::accounts;
 
@@ -150,7 +150,7 @@ std::vector<LogInInfo> Database::GetLogInInfo()
 	return accounts;
 }
 
-int Database::IdOfUser(std::string username)
+int Database::IdOfUser(const std::string& username)
 {
 	for (auto temp : accounts)
 		if (username == temp.username)

@@ -13,9 +13,9 @@ public:
 	int GetSuma() { return suma; }
 
 protected:
-	int tranId;
-	int clientId;
-	int suma;
+	int tranId = -1;
+	int clientId = -1;
+	int suma = 0;
 
 	Banca* banca;
 };
