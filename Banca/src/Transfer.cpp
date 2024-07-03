@@ -17,15 +17,15 @@ Transfer::Transfer(int newReceiverId, int newReceiverContId, int newClientId, in
 
 bool Transfer::VerificaTransfer()
 {
-	if (!banca->HasId(receiverId))
+	if (!Banca::GetInstance()->HasId(receiverId))
 		return false;
-	if (!banca->GetClientWithID(receiverId)->HasContWithId(receiverContId))
+	if (!Banca::GetInstance()->GetClientWithID(receiverId)->HasContWithId(receiverContId))
 		return false;
-	if (!banca->HasId(clientId))
+	if (!Banca::GetInstance()->HasId(clientId))
 		return false;
-	if (!banca->GetClientWithID(clientId)->HasContWithId(clientContId))
+	if (!Banca::GetInstance()->GetClientWithID(clientId)->HasContWithId(clientContId))
 		return false;
-	if (banca->GetClientWithID(clientId)->GetContWithID(clientContId)->GetSold() < suma)
+	if (Banca::GetInstance()->GetClientWithID(clientId)->GetContWithID(clientContId)->GetSold() < suma)
 		return false;
 	return true;
 }
@@ -38,8 +38,8 @@ void Transfer::Run()
 		return;
 	}
 
-	banca->GetClientWithID(clientId)->GetContWithID(clientContId)->SubtractFromSold(suma);
-	banca->GetClientWithID(receiverId)->GetContWithID(receiverContId)->AddToSold(suma);
+	Banca::GetInstance()->GetClientWithID(clientId)->GetContWithID(clientContId)->SubtractFromSold(suma);
+	Banca::GetInstance()->GetClientWithID(receiverId)->GetContWithID(receiverContId)->AddToSold(suma);
 
 	ConfirmareTransfer();
 }

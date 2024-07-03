@@ -2,9 +2,11 @@
 
 #include "Banca.h"
 
+#include "Encriptare.h"
+
 struct LogInInfo {
 	std::string username;
-	std::string password;
+	SecureContainer<std::string> password;
 	int id;
 };
 

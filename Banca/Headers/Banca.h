@@ -10,22 +10,17 @@ class Tranzactie;
 
 class Banca
 {
-public:
+private:
 	Banca();
 	~Banca();
-	explicit Banca(const std::vector<Client>& newClienti);
 
-	friend std::ostream& operator<<(std::ostream& os, const Banca& banca) {
-		os << "Numar clienti : " << banca.nrClienti << "\n";
-		return os;
-	}
-
-private:
 	size_t nrClienti = 0;
 	std::vector<Client> clienti;
 
 	size_t nrTran = 0;
 	std::vector<std::shared_ptr<Tranzactie>> tranzactii;
+
+	static Banca* s_Banca;
 
 public:
 	size_t GetNrClienti() { return nrClienti; }
@@ -43,5 +38,5 @@ public:
 
 	Client* GetClientWithID(int id);
 
-	static Banca* s_Banca;
+	static Banca* GetInstance();
 };

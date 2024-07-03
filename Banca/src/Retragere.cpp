@@ -11,11 +11,11 @@ Retragere::Retragere(int newClientId, int newClientContId, int newsuma)
 
 bool Retragere::VerificaRetragere()
 {
-	if (!banca->HasId(clientId))
+	if (!Banca::GetInstance()->HasId(clientId))
 		return false;
-	if (!banca->GetClientWithID(clientId)->HasContWithId(clientContId))
+	if (!Banca::GetInstance()->GetClientWithID(clientId)->HasContWithId(clientContId))
 		return false;
-	if (banca->GetClientWithID(clientId)->GetContWithID(clientContId)->GetSold() < suma)
+	if (Banca::GetInstance()->GetClientWithID(clientId)->GetContWithID(clientContId)->GetSold() < suma)
 		return false;
 	return true;
 }
@@ -28,7 +28,7 @@ void Retragere::Run()
 		return;
 	}
 
-	banca->GetClientWithID(clientId)->GetContWithID(clientContId)->SubtractFromSold(suma);
+	Banca::GetInstance()->GetClientWithID(clientId)->GetContWithID(clientContId)->SubtractFromSold(suma);
 
 	ConfirmareRetragere();
 

@@ -6,6 +6,8 @@
 
 int main()
 {
+	//Banca* banca = Banca::GetInstance();
+
 	try {
 		ClientUI::Run();
 	}

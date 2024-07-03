@@ -11,9 +11,9 @@ Depunere::Depunere(int newClientId, int newClientContId, int newsuma)
 
 bool Depunere::VerificaDepunere()
 {
-	if (!banca->HasId(clientId))
+	if (!Banca::GetInstance()->HasId(clientId))
 		return false;
-	if (!banca->GetClientWithID(clientId)->HasContWithId(clientContId))
+	if (!Banca::GetInstance()->GetClientWithID(clientId)->HasContWithId(clientContId))
 		return false;
     return true;
 }
@@ -26,7 +26,7 @@ void Depunere::Run()
 		return;
 	}
 
-	banca->GetClientWithID(clientId)->GetContWithID(clientContId)->AddToSold(suma);
+	Banca::GetInstance()->GetClientWithID(clientId)->GetContWithID(clientContId)->AddToSold(suma);
 
 	ConfirmareDepunere();
 }
@@ -34,7 +34,6 @@ void Depunere::Run()
 void Depunere::ConfirmareDepunere()
 {
 	std::cout << "Depunere confirmate\n";
-	//banca->AddTranzactie(this);
 }
 
 Depunere::~Depunere()

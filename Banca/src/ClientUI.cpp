@@ -33,18 +33,17 @@ void ClientUI::Run()
 	}
 	Run2(input);
 
-	Banca::s_Banca->ShowTranzactii();
-	Database::WriteAccountsInfo(Banca::s_Banca);
-	Database::WriteTranzactions(Banca::s_Banca);
+	Banca::GetInstance()->ShowTranzactii();
+	Database::WriteAccountsInfo(Banca::GetInstance());
+	Database::WriteTranzactions(Banca::GetInstance());
 }
 
 void ClientUI::Run2(int input)
 {
-	Banca* banca = Banca::s_Banca;
 
-	Database::ReadAccountsInfo(banca);
+	Database::ReadAccountsInfo(Banca::GetInstance());
 
-	if (banca->HasId(ClientID))
+	if (Banca::GetInstance()->HasId(ClientID))
 	{
 		int input2;
 		bool b_back = false;
@@ -58,14 +57,14 @@ void ClientUI::Run2(int input)
 				std::cout << "Enter the account id: \n";
 				input2 = UI::GetInput();
 				Cont newCont(input2);
-				banca->GetClientWithID(ClientID)->AddCont(newCont);
+				Banca::GetInstance()->GetClientWithID(ClientID)->AddCont(newCont);
 			}
 			else if (input == 1)
 			{
 				std::cout << "Enter the account id\n";
 				input2 = UI::GetInput();
-				if (banca->GetClientWithID(ClientID)->HasContWithId(input2))
-					banca->GetClientWithID(ClientID)->EraseCont(input2);
+				if (Banca::GetInstance()->GetClientWithID(ClientID)->HasContWithId(input2))
+					Banca::GetInstance()->GetClientWithID(ClientID)->EraseCont(input2);
 				else
 					std::cout << "No account with id: " << input2 << " found\n\n";
 
@@ -75,14 +74,14 @@ void ClientUI::Run2(int input)
 				std::cout << "Enter the Loan id: \n";
 				input2 = UI::GetInput();
 				Loan newLoan(input2);
-				banca->GetClientWithID(ClientID)->AddLoan(newLoan);
+				Banca::GetInstance()->GetClientWithID(ClientID)->AddLoan(newLoan);
 			}
 			else if (input == 3)
 			{
 				std::cout << "Enter the Loan id\n";
 				input2 = UI::GetInput();
-				if (banca->GetClientWithID(ClientID)->HasLoanWithId(input2))
-					banca->GetClientWithID(ClientID)->EraseLoan(input2);
+				if (Banca::GetInstance()->GetClientWithID(ClientID)->HasLoanWithId(input2))
+					Banca::GetInstance()->GetClientWithID(ClientID)->EraseLoan(input2);
 				else
 					std::cout << "No Loan with id: " << input2 << " found\n\n";
 			}
@@ -113,10 +112,11 @@ void ClientUI::LogIn()
 	bool checked = false;
 	for (auto temp : Database::GetLogInInfo())
 	{
-		if (temp.username == username && temp.password == password)
+		if (temp.username == username && temp.password.Get() == password)
 		{
 			ClientID = temp.id;
 			checked = true;
+			break;
 		}
 	}
 
@@ -152,7 +152,7 @@ void ClientUI::SignUp()
 
 	LogInInfo acc;
 	acc.username = username;
-	acc.password = password;
+	acc.password.Set(password);
 
 	Database::AddAccount(acc);
 
@@ -183,7 +183,7 @@ void ClientUI::DoTransaction(int input)
 		std::shared_ptr<Retragere> t = std::make_shared<Retragere>(ClientID, contId, suma);
 		t->SetClientId(ClientID);
 		t->Run();
-		Banca::s_Banca->AddTranzactie(t);
+		Banca::GetInstance()->AddTranzactie(t);
 	}
 	else if (input2 == 2)
 	{
@@ -197,7 +197,7 @@ void ClientUI::DoTransaction(int input)
 		std::shared_ptr<Depunere> t = std::make_shared<Depunere>(ClientID, contId, suma);
 		t->SetClientId(ClientID);
 		t->Run();
-		Banca::s_Banca->AddTranzactie(t);
+		Banca::GetInstance()->AddTranzactie(t);
 	}
 	else if (input2 == 3)
 	{
@@ -215,7 +215,7 @@ void ClientUI::DoTransaction(int input)
 		std::shared_ptr<Transfer> t = std::make_shared<Transfer>(receiverId, receiverContId, ClientID, contId, suma);
 		t->SetClientId(ClientID);
 		t->Run();
-		Banca::s_Banca->AddTranzactie(t);
+		Banca::GetInstance()->AddTranzactie(t);
 	}
 	else if (input2 == -1)
 	{

@@ -88,7 +88,7 @@ void Database::WriteLoginInfo()
 
 	for (size_t i = 0; i < accounts.size(); ++i)
 	{
-		fout << accounts[i].username << " " << accounts[i].password << " " << accounts[i].id << "\n";
+		fout << accounts[i].username << " " << accounts[i].password.Get() << " " << accounts[i].id << "\n";
 	}
 }
 
@@ -107,7 +107,9 @@ void Database::ReadLoginInfo()
 	for (int i = 0; i < nrConturi; ++i)
 	{
 		fin >> temp.username;
-		fin >> temp.password;
+		std::string s;
+		fin >> s;
+		temp.password.Set(s);
 		fin >> temp.id;
 
 		accounts.push_back(temp);
@@ -160,16 +162,16 @@ int Database::IdOfUser(const std::string& username)
 
 void Database::AddAccount(LogInInfo acc)
 {
-	ReadAccountsInfo(Banca::s_Banca);
+	ReadAccountsInfo(Banca::GetInstance());
 	if (accounts.size() > 0)
 		acc.id = accounts[accounts.size() - 1].id + 1;
 	else
 		acc.id = 0;
 
 	Client temp(acc.id);
-	Banca::s_Banca->AddClient(temp);
+	Banca::GetInstance()->AddClient(temp);
 
 	accounts.push_back(acc);
 	WriteLoginInfo();
-	WriteAccountsInfo(Banca::s_Banca);
+	WriteAccountsInfo(Banca::GetInstance());
 }

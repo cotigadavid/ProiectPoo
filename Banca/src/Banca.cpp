@@ -9,14 +9,6 @@ Banca* Banca::s_Banca = nullptr;
 
 Banca::Banca()
 {
-	s_Banca = this;
-}
-
-Banca::Banca(const std::vector<Client>& newClienti)
-	: clienti(newClienti)
-{
-	s_Banca = this;
-	nrClienti = newClienti.size();
 }
 
 void Banca::AddTranzactie(std::shared_ptr<Tranzactie> newTran)
@@ -49,8 +41,6 @@ void Banca::ShowTranzactii()
 		{
 			std::cout << "Depunere de catre " << dep->GetClientId() << " in valoare de " << dep->GetSuma() << "\n";
 		}
-			
-		
 	}
 }
 
@@ -95,8 +85,14 @@ Client* Banca::GetClientWithID(int id)
 	return nullptr;
 }
 
+Banca* Banca::GetInstance() {
+	if (s_Banca == nullptr) {
+		s_Banca = new Banca();
+	}
+	return s_Banca;
+}
+
 
 Banca::~Banca()
 {
-	//Database::
 }
