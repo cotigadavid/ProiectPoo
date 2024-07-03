@@ -34,7 +34,7 @@ private:
         return decrypted;
 
     }
-
+    template <typename T>
     friend void PrintEncryptedValue(const SecureContainer<T>& sc);
 };
 
