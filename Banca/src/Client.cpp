@@ -93,11 +93,11 @@ Cont* Client::GetContWithID(int ID)
 	return nullptr;
 }
 
-Loan* Client::GetLoanWithID(int ID)
-{
-	for (size_t i = 0; i < loans.size(); ++i)
-		if (loans[i].GetId() == ID)
-			return &loans[i];
-
-	return nullptr;
-}
+//Loan* Client::GetLoanWithID(int ID)
+//{
+//	for (size_t i = 0; i < loans.size(); ++i)
+//		if (loans[i].GetId() == ID)
+//			return &loans[i];
+//
+//	return nullptr;
+//}

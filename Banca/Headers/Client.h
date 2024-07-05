@@ -61,5 +61,5 @@ public:
 	std::vector<Loan> GetLoans() { return loans; }
 
 	Cont* GetContWithID(int id);
-	Loan* GetLoanWithID(int id);
+	//Loan* GetLoanWithID(int id);
 };

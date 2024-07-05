@@ -31,7 +31,7 @@ public:
 	void ShowTranzactii();
 
 	void AddClient(Client& newClient);
-	void EraseClient(int index);
+	//void EraseClient(int index);
 	void EraseAllClients();
 
 	bool HasId(int id);
