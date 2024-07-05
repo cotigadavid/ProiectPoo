@@ -1,12 +1,5 @@
 #include "../Headers/Transfer.h"
 
-//#include "Banca.h"
-
-Transfer::Transfer(int newReceiverId, int newClientId)
-	: receiverId(newReceiverId)
-{
-	clientId = newClientId;
-}
 
 Transfer::Transfer(int newReceiverId, int newReceiverContId, int newClientId, int newClientContId, int newSuma)
 	: receiverId(newReceiverId), receiverContId(newReceiverContId), clientContId(newClientContId)

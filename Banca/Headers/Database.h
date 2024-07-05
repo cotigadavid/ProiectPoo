@@ -7,7 +7,7 @@
 struct LogInInfo {
 	std::string username;
 	SecureContainer<std::string> password;
-	int id;
+	int id = 0;
 };
 
 class Database

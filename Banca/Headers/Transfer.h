@@ -7,7 +7,6 @@
 class Transfer : public Tranzactie {
 public:
 
-	Transfer(int newReceiverId, int newClientId);
 	Transfer(int newReceiverId, int newReceiverContId, int newClientId, int newClientContId, int newSuma);
 
 	bool VerificaTransfer();
