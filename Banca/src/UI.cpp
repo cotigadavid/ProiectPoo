@@ -2,11 +2,6 @@
 
 #include <iostream>
 
-void UI::AskForID()
-{
-	std::cout << "Please provide the ID of the client\n";
-}
-
 void UI::SelectClientAction()
 {
 	std::cout << "Please Select the desired action\n";
