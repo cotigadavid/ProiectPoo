@@ -9,11 +9,16 @@ Depunere::Depunere(int newClientId, int newClientContId, int newsuma)
 	suma = newsuma;
 }
 
+void Depunere::ShowTranzactie()
+{
+	std::cout << "Depunere de catre " << GetClientId() << " in valoare de " << GetSuma() << "\n";
+}
+
 bool Depunere::VerificaDepunere()
 {
 	if (!Banca::GetInstance()->HasId(clientId))
 		return false;
-	if (!Banca::GetInstance()->GetClientWithID(clientId)->HasContWithId(clientContId))
+	if (!Banca::GetInstance()->GetClientWithID(clientId).HasContWithId(clientContId))
 		return false;
     return true;
 }
@@ -26,7 +31,7 @@ void Depunere::Run()
 		return;
 	}
 
-	Banca::GetInstance()->GetClientWithID(clientId)->GetContWithID(clientContId)->AddToSold(suma);
+	Banca::GetInstance()->GetClientWithID(clientId).GetContWithID(clientContId).AddToSold(suma);
 
 	ConfirmareDepunere();
 }

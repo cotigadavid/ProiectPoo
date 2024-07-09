@@ -9,15 +9,16 @@ public:
 
 	Transfer(int newReceiverId, int newReceiverContId, int newClientId, int newClientContId, int newSuma);
 
-	bool VerificaTransfer();
+	void ShowTranzactie() override;
 	void Run() override;
-	void ConfirmareTransfer();
-
 	int GetReceiverId() { return receiverId; }
 
 	~Transfer();
 
 private:
+	bool VerificaTransfer();
+	void ConfirmareTransfer();
+
 	int receiverId;
 	int receiverContId;
 	int clientContId;

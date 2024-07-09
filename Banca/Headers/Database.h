@@ -21,8 +21,6 @@ public:
 	static void WriteLoginInfo();
 	static void ReadLoginInfo();
 
-	static void WriteTranzactions(Banca* banca);
-
 	static std::vector<LogInInfo> GetLogInInfo();
 	static int IdOfUser(const std::string& username);
 	static void AddAccount(LogInInfo acc);

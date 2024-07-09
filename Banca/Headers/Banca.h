@@ -14,7 +14,6 @@ private:
 	Banca();
 	~Banca();
 
-	size_t nrClienti = 0;
 	std::vector<Client> clienti;
 
 	size_t nrTran = 0;
@@ -23,7 +22,6 @@ private:
 	static Banca* s_Banca;
 
 public:
-	size_t GetNrClienti() { return nrClienti; }
 	std::vector<Client> GetClienti() { return clienti; }
 	std::vector<std::shared_ptr<Tranzactie>> GetTranzactii() { return tranzactii; }
 
@@ -36,7 +34,7 @@ public:
 
 	bool HasId(int id);
 
-	Client* GetClientWithID(int id);
+	Client& GetClientWithID(int id);
 
 	static Banca* GetInstance();
 };

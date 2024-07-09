@@ -18,18 +18,18 @@ void Database::WriteAccountsInfo(Banca* banca)
 
 	std::vector<Client> clienti = banca->GetClienti();
 
-	fout << banca->GetNrClienti() << "\n";
+	fout << banca->GetClienti().size() << "\n";
 
 	for (size_t i = 0; i < clienti.size(); ++i)
 	{
-		fout << clienti[i].GetId() << " " << clienti[i].GetNrConturi() << " " << clienti[i].GetNrLoans() << " ";
+		fout << clienti[i].GetId() << " " << clienti[i].GetConturi().size() << " " << clienti[i].GetLoans().size() << " ";
 
 		std::vector<Cont> conturi = clienti[i].GetConturi();
 		std::vector<Loan> Loans = clienti[i].GetLoans();
-		for (size_t j = 0; j < clienti[i].GetNrConturi(); ++j)
+		for (size_t j = 0; j < clienti[i].GetConturi().size(); ++j)
 			fout << conturi[j].GetId() << " " << conturi[j].GetSold() << " ";
 
-		for (size_t j = 0; j < clienti[i].GetNrLoans(); ++j)
+		for (size_t j = 0; j < clienti[i].GetLoans().size(); ++j)
 			fout << Loans[j].GetId() << " " << Loans[j].GetSold() << " ";
 	}
 
@@ -113,37 +113,6 @@ void Database::ReadLoginInfo()
 		fin >> temp.id;
 
 		accounts.push_back(temp);
-	}
-}
-
-void Database::WriteTranzactions(Banca* banca)
-{
-
-	for (size_t i = 0; i < banca->GetTranzactii().size(); ++i)
-	{
-		Transfer* tran = dynamic_cast<Transfer*>(banca->GetTranzactii()[i].get());
-
-		if (tran != nullptr)
-		{
-			std::cout << "Transfer de la " << tran->GetClientId() << " catre " << tran->GetReceiverId() << " in valoare de " << tran->GetSuma() << "\n";
-		}
-
-
-		Retragere* ret = dynamic_cast<Retragere*>(banca->GetTranzactii()[i].get());
-
-		if (ret != nullptr)
-		{
-			std::cout << "Retragere de catre " << ret->GetClientId() << " in valoare de " << ret->GetSuma() << "\n";
-		}
-
-
-		Depunere* dep = dynamic_cast<Depunere*>(banca->GetTranzactii()[i].get());
-		if (dep != nullptr)
-		{
-			std::cout << "Depunere de catre " << dep->GetClientId() << " in valoare de " << dep->GetSuma() << "\n";
-		}
-
-
 	}
 }
 

@@ -8,6 +8,8 @@ public:
 
 	virtual void Run() = 0;
 
+	virtual void ShowTranzactie() = 0;
+
 	int GetClientId() { return clientId; }
 	void SetClientId(int newId) { clientId = newId; }
 	int GetSuma() { return suma; }

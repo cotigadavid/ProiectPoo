@@ -20,20 +20,17 @@ public:
 
 	Client& operator=(const Client& other) {
 		id = other.id;
-		nrConturi = other.nrConturi;
 		conturi = other.conturi;
 		return *this;
 	}
 
 	friend std::ostream& operator<<(std::ostream& os, const Client& client) {
-		os << "Id : " << client.id << " Numar conturi : " << client.nrConturi << " Numar Credite : " << client.nrLoans << "\n";
+		os << "Id : " << client.id << " Numar conturi : " << client.conturi.size() << " Numar Credite : " << client.loans.size() << "\n";
 		return os;
 	}
 
 private:
 	int id = -1;
-	size_t nrConturi = 0;
-	size_t nrLoans = 0;
 	std::string name;
 	std::vector<Cont> conturi;
 	std::vector<Loan> loans;
@@ -54,12 +51,9 @@ public:
 	std::string GetName() { return name; }
 	void SetName(const std::string& newName) { name = newName; }
 
-	size_t GetNrConturi() { return nrConturi; }
-	size_t GetNrLoans() { return nrLoans; }
-
 	std::vector<Cont> GetConturi() { return conturi; }
 	std::vector<Loan> GetLoans() { return loans; }
 
-	Cont* GetContWithID(int id);
+	Cont& GetContWithID(int id);
 	//Loan* GetLoanWithID(int id);
 };

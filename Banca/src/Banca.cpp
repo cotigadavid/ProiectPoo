@@ -4,6 +4,7 @@
 #include "../Headers/Transfer.h"
 #include "../Headers/Depunere.h"
 #include "../Headers/Retragere.h"
+#include "../Headers/Exceptii.h"
 
 Banca* Banca::s_Banca = nullptr;
 
@@ -20,35 +21,13 @@ void Banca::AddTranzactie(std::shared_ptr<Tranzactie> newTran)
 
 void Banca::ShowTranzactii()
 {
-	for (size_t i = 0; i < tranzactii.size(); ++i)
-	{
-		Transfer* tran = dynamic_cast<Transfer*>(tranzactii[i].get());
-
-		if (tran != nullptr)
-		{
-			std::cout << "Transfer de la " << tran->GetClientId() << " catre " << tran->GetReceiverId() << " in valoare de " << tran->GetSuma() << "\n";
-		}
-
-		Retragere* ret = dynamic_cast<Retragere*>(tranzactii[i].get());
-
-		if (ret != nullptr)
-		{
-			std::cout << "Retragere de catre " << ret->GetClientId() << " in valoare de " << ret->GetSuma() << "\n";
-		}
-
-		Depunere* dep = dynamic_cast<Depunere*>(tranzactii[i].get());
-		if (dep != nullptr)
-		{
-			std::cout << "Depunere de catre " << dep->GetClientId() << " in valoare de " << dep->GetSuma() << "\n";
-		}
-	}
+	for (auto ptr : tranzactii)
+		ptr->ShowTranzactie();
 }
 
 void Banca::AddClient(Client& newClient)
 {
 	clienti.push_back(newClient);
-
-	nrClienti++;
 }
 
 //void Banca::EraseClient(int index)
@@ -64,7 +43,6 @@ void Banca::AddClient(Client& newClient)
 
 void Banca::EraseAllClients()
 {
-	nrClienti = 0;
 	clienti.clear();
 }
 
@@ -76,13 +54,13 @@ bool Banca::HasId(int id)
 	return false;
 }
 
-Client* Banca::GetClientWithID(int id)
+Client& Banca::GetClientWithID(int id)
 {
 	for (size_t i = 0; i < clienti.size(); ++i)
 		if (clienti[i].GetId() == id)
-			return &clienti[i];
-	
-	return nullptr;
+			return clienti[i];
+
+	throw eroare_id("Id client inexistent");
 }
 
 Banca* Banca::GetInstance() {

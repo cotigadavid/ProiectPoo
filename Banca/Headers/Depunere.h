@@ -6,12 +6,14 @@ class Depunere : public Tranzactie {
 public:
 	Depunere(int newClientId, int newClientContId, int newsuma);
 
-	bool VerificaDepunere();
+	void ShowTranzactie() override;
 	void Run() override;
-	void ConfirmareDepunere();
 
 	~Depunere();
 
 private:
+	bool VerificaDepunere();
+	void ConfirmareDepunere();
+
 	int clientContId;
 };

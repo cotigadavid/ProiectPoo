@@ -15,3 +15,8 @@ class eroare_pointer : public eroare_app {
 public:
     explicit eroare_pointer(const std::string& msg) : eroare_app(msg) {}
 };
+
+class eroare_id : public eroare_app {
+public:
+    explicit eroare_id(const std::string& msg) : eroare_app(msg) {}
+};
